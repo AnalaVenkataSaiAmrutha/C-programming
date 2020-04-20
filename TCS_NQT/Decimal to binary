@@ -1,1 +1,25 @@
-/* Program for converting decimal to binary */
+/* Program for converting decimal number to binary */
+#include<stdio.h>
+void dec_to_bin(int n) 
+{
+	int r,i=0,a[50],j;
+	while(n!=0)
+	{
+		r=n%2;
+		a[i++]=r;
+		n=n/2;
+		//printf("%d",r);
+	}
+	//printf("\n");
+	for(j=i-1;j>=0;j--)
+	{
+		printf("%d",a[j]);
+	}
+	
+}
+int main()
+{
+	int n,*res;
+	scanf("%d",&n);
+	dec_to_bin(n);
+}
