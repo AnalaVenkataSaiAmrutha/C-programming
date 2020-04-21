@@ -1,0 +1,30 @@
+#include<stdio.h>
+
+int power(int num,int i)
+{
+	if(i==1)
+	 return num;
+	else if(i==0)
+	 return 1;
+	else
+	 return num*power(num,i-1);
+}
+int bin_to_dec(int n)
+{
+	int r,sum=0,i=0;
+	while(n!=0)
+	{
+		r=n%10;
+		sum=sum+r*power(2,i);
+		n=n/10;
+		i++;
+	}
+	return sum;
+}
+int main()
+{
+	int n,res;
+	scanf("%d",&n);
+	res=bin_to_dec(n);
+	printf("%d",res);
+}
